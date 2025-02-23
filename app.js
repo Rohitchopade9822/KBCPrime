@@ -142,7 +142,6 @@ nextBtn.addEventListener("click", nextquestion);
 // chkbtn.addEventListener("click",checkAnwser);
 bkc.addEventListener("click",bksquestion);
 sbt.addEventListener("click",checkAnwser);
-// Run the function once the DOM is fully loaded
 document.addEventListener("DOMContentLoaded", () => {
   loadquestion();
 });
