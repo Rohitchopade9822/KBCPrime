@@ -117,7 +117,7 @@ const checkAnwser = () => {
   
   if(!selectoption){
 
-    alert( "No option selected");
+    alert( "please select option");
    
 
   }
