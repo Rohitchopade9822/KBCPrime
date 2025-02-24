@@ -81,6 +81,7 @@ const bksquestion = () => {
 };
 
 const nextquestion =()=>{
+  console.log("Hello all")
   sbt.disabled = false;
 
   const radioButtons = document.querySelectorAll('input[name="nm"]');
@@ -138,11 +139,15 @@ const checkAnwser = () => {
     
     
 };
+
 nextBtn.addEventListener("click", nextquestion);
 // chkbtn.addEventListener("click",checkAnwser);
 bkc.addEventListener("click",bksquestion);
 sbt.addEventListener("click",checkAnwser);
 document.addEventListener("DOMContentLoaded", () => {
+  console.log("Hello")
   loadquestion();
 });
+
+
  
