@@ -44,6 +44,23 @@ const anscorrect=document.querySelector(".Ans-text");
 const feedback=document.querySelector(".Ans-text");
 const feedback2=document.querySelector(".Ans-text");
 const mesg=document.querySelector(".message-ans");
+const str=document.querySelector(".str-btn")
+const endquiz = document.querySelector(".fnl-btn")
+const quizcontainer = document.querySelector(".final-container"); 
+let quizStart = false;
+
+nextBtn.disabled=true;
+bkc.disabled=true;
+sbt.disabled=true;
+
+document.addEventListener("click" ,(event) => {
+  if (!quizStart) {
+    // Check if the click is on a button that's not the start button
+    if (event.target !== str) {
+      alert("Please start the quiz.");
+    }
+  }
+});
 
 const loadquestion = () => {  
 
@@ -81,7 +98,8 @@ const bksquestion = () => {
 };
 
 const nextquestion =()=>{
-  console.log("Hello all")
+  
+ 
   sbt.disabled = false;
 
   const radioButtons = document.querySelectorAll('input[name="nm"]');
@@ -140,13 +158,33 @@ const checkAnwser = () => {
     
 };
 
+endquiz.addEventListener("click",()=>{
+  quizcontainer.style.display="none";
+ // main.style.display="none"
+   box.style.display="none";
+   option.style.display="none"
+
+  const successmessage=document.createElement("div");
+  successmessage.classList.add("successmessage");
+  successmessage.innerHTML="<h2>You have successfully submitted the quiz!</h2>";
+  document.body.appendChild(successmessage);
+  
+  // Optionally, disable the "End Quiz" button
+  endquiz.disabled = false;
+})
+
 nextBtn.addEventListener("click", nextquestion);
 // chkbtn.addEventListener("click",checkAnwser);
 bkc.addEventListener("click",bksquestion);
 sbt.addEventListener("click",checkAnwser);
-document.addEventListener("DOMContentLoaded", () => {
+str.addEventListener("click", () => {
   console.log("Hello")
   loadquestion();
+  nextBtn.disabled=false;
+  bkc.disabled=false;
+  sbt.disabled=false;
+  str.disabled=true;
+  quizStart=true;
 });
 
 

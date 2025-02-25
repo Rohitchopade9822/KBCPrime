@@ -89,8 +89,21 @@ input[type="radio"] {
     border-radius: 5px; /* Adds rounded corners to the button */
     transition: background-color 0.3s ease; /* Smooth transition for hover effect */
 }
-.fnl-btn{
+.str-btn{
+
     background-color: #21502e; /* Green background */
+    color: white; /* White text color */
+    border: none; /* Removes border */
+    padding: 12px 25px; /* Adds padding to the button */
+    font-size: 16px; /* Sets the font size */
+    cursor: pointer; /* Changes the cursor to a pointer on hover */
+    border-radius: 5px; /* Adds rounded corners to the button */
+    transition: background-color 0.3s ease;
+    
+
+}
+.fnl-btn{
+    background-color: #da6323; /* Green background */
     color: white; /* White text color */
     border: none; /* Removes border */
     padding: 12px 25px; /* Adds padding to the button */
@@ -127,8 +140,8 @@ input[type="radio"] {
 }
 .timer-container {
     position: fixed; /* Fixed position so that it stays on top even when scrolling */
-    top: 350px; /* Space from the top */
-    right: 400px; /* Space from the right */
+    top: 300px; /* Space from the top */
+    right: 100px; /* Space from the right */
     width: 120px;
     height: 120px;
     margin: 0;
