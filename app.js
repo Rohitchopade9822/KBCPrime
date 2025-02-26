@@ -48,10 +48,9 @@ const str=document.querySelector(".str-btn")
 const endquiz = document.querySelector(".fnl-btn")
 const quizcontainer = document.querySelector(".final-container"); 
 let quizStart = false;
-
-nextBtn.disabled=true;
 bkc.disabled=true;
 sbt.disabled=true;
+nextBtn.disabled=true;
 
 document.addEventListener("click" ,(event) => {
   if (!quizStart) {
@@ -59,6 +58,7 @@ document.addEventListener("click" ,(event) => {
     if (event.target !== str) {
       alert("Please start the quiz.");
     }
+   
   }
 });
 
@@ -176,15 +176,19 @@ endquiz.addEventListener("click",()=>{
 nextBtn.addEventListener("click", nextquestion);
 // chkbtn.addEventListener("click",checkAnwser);
 bkc.addEventListener("click",bksquestion);
+
 sbt.addEventListener("click",checkAnwser);
+
 str.addEventListener("click", () => {
+  quizStart = true;
   console.log("Hello")
-  loadquestion();
   nextBtn.disabled=false;
   bkc.disabled=false;
   sbt.disabled=false;
   str.disabled=true;
-  quizStart=true;
+  loadquestion();
+ 
+  
 });
 
 
