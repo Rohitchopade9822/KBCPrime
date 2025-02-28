@@ -160,24 +160,5 @@ input[type="radio"] {
     z-index: 1;
   }
   
-  /* #timerContainer::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: conic-gradient(#3498db 0% 0%, #f4f4f4 0% 100%);
-    border-radius: 50%;
-    animation: countdown 30s linear infinite; /* Adjust the time here */
-  } */
   
-  /* @keyframes countdown {
-    0% {
-      background: conic-gradient(#3498db 0% 0%, #f4f4f4 0% 100%);
-    }
-    100% {
-      background: conic-gradient(#3498db 100% 100%, #f4f4f4 0% 100%);
-    }
-  } */
   
