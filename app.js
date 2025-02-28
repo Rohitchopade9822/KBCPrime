@@ -47,20 +47,24 @@ const mesg=document.querySelector(".message-ans");
 const str=document.querySelector(".str-btn")
 const endquiz = document.querySelector(".fnl-btn")
 const quizcontainer = document.querySelector(".final-container"); 
-let quizStart = false;
+const timeDisplay = document.getElementById('quizTime')
+const options = document.querySelectorAll('.option');
+str.disabled=false;
 bkc.disabled=true;
 sbt.disabled=true;
 nextBtn.disabled=true;
 
-document.addEventListener("click" ,(event) => {
-  if (!quizStart) {
-    // Check if the click is on a button that's not the start button
-    if (event.target !== str) {
-      alert("Please start the quiz.");
-    }
+
+
+// document.addEventListener("click" ,(event) => {
+//   if (!quizStart) {
+//     // Check if the click is on a button that's not the start button
+//     if (event.target !== str) {
+//       alert("Please start the quiz.");
+//     }
    
-  }
-});
+//   }
+// });
 
 const loadquestion = () => {  
 
@@ -98,10 +102,8 @@ const bksquestion = () => {
 };
 
 const nextquestion =()=>{
-  
- 
-  sbt.disabled = false;
 
+  sbt.disabled = false;
   const radioButtons = document.querySelectorAll('input[name="nm"]');
   
   // Debugging: Log the radio buttons to check if they are being selected
@@ -173,6 +175,24 @@ endquiz.addEventListener("click",()=>{
   endquiz.disabled = false;
 })
 
+function hideOptionLabels() {
+  optionLabels.forEach(label => {
+      label.style.display = 'none';  // Hides the label
+  });
+}
+ 
+function hideQuestionBox() {
+  quesbox.style.display = 'none';  // Hides the question box
+  sbt.style.display='none';
+  bkc.style.display='none';
+  str.style.display='none';
+  endquiz.style.display='none';
+  nextBtn.style.display='none';
+
+
+
+}
+
 nextBtn.addEventListener("click", nextquestion);
 // chkbtn.addEventListener("click",checkAnwser);
 bkc.addEventListener("click",bksquestion);
@@ -180,13 +200,32 @@ bkc.addEventListener("click",bksquestion);
 sbt.addEventListener("click",checkAnwser);
 
 str.addEventListener("click", () => {
-  quizStart = true;
+ 
+  let timeremaing=30;
+  timeDisplay.innerHTML=timeremaing;
+
+  const timer=setInterval(()=>{
+    timeremaing--;
+    timeDisplay.innerHTML=timeremaing;
+    if(timeremaing <=0){
+      clearInterval(timer);
+      hideOptionLabels();
+      hideQuestionBox()
+      bkc.disabled=true;
+      sbt.disabled=true;
+      str.disabled=true;
+      
+
+    }
+ 
+
   console.log("Hello")
   nextBtn.disabled=false;
   bkc.disabled=false;
   sbt.disabled=false;
   str.disabled=true;
   loadquestion();
+},1000);
  
   
 });
