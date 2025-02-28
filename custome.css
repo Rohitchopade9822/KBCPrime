@@ -138,44 +138,46 @@ input[type="radio"] {
 
 
 }
-.timer-container {
-    position: fixed; /* Fixed position so that it stays on top even when scrolling */
-    top: 300px; /* Space from the top */
-    right: 100px; /* Space from the right */
-    width: 120px;
-    height: 120px;
-    margin: 0;
+#timerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 10px solid #3498db; /* Circular border */
+    position: absolute; /* Changed to absolute positioning */
+    top: 350px; /* Position from the top */
+    left: 700px; /* Position from the left */
+    background-color: #f4f4f4;
   }
   
-  .circle-progress {
+  #quizTime {
+    font-size: 40px;
+    font-weight: bold;
+    color: #3498db;
+    position: absolute;
+    z-index: 1;
+  }
+  
+  /* #timerContainer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    transform: rotate(-90deg); /* Rotate the circle for starting from the top */
-  }
+    background: conic-gradient(#3498db 0% 0%, #f4f4f4 0% 100%);
+    border-radius: 50%;
+    animation: countdown 30s linear infinite; /* Adjust the time here */
+  } */
   
-  .circle-bg,
-  .circle-fg {
-    fill: none;
-    stroke-width: 10;
-  }
-  
-  .circle-bg {
-    stroke: #e6e6e6;
-  }
-  
-  .circle-fg {
-    stroke: #4caf50; /* Green color */
-    stroke-dasharray: 339.292; /* Circumference of the circle */
-    stroke-dashoffset: 339.292; /* Initially full */
-    transition: stroke-dashoffset 1s linear;
-  }
-  
-  .timer-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 18px;
-    font-weight: bold;
-  }
+  /* @keyframes countdown {
+    0% {
+      background: conic-gradient(#3498db 0% 0%, #f4f4f4 0% 100%);
+    }
+    100% {
+      background: conic-gradient(#3498db 100% 100%, #f4f4f4 0% 100%);
+    }
+  } */
   
